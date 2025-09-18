@@ -19,89 +19,138 @@
       align-items: center;
       height: 100vh;
       overflow: hidden;
+      font-family: Arial, sans-serif;
     }
 
     #flipbook {
-      width: 90vw;   /* take 90% of screen width */
-      height: 90vh;  /* take 90% of screen height */
-      border: 4px solid black;
+      width: 90vw;
+      height: 90vh;
+      border: 5px solid black;
       box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
     }
 
     #flipbook .page {
       width: 100%;
       height: 100%;
+      background: white;
     }
 
     #flipbook .page img {
       width: 100%;
       height: 100%;
       object-fit: contain;
+      display: block;
     }
+
+    /* Navigation buttons */
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.2);
+      border: 2px solid white;
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 10px 15px;
+      border-radius: 50%;
+      user-select: none;
+    }
+
+    .nav-btn:hover {
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    #prevBtn { left: 20px; }
+    #nextBtn { right: 20px; }
   </style>
 </head>
 <body>
 
+  <!-- Flipbook -->
   <div id="flipbook">
-    <!-- Pages -->
-    <div class="page"><img src="images/page1.jpg" alt="Page 1"></div>
-    <div class="page"><img src="images/page2.jpg" alt="Page 2"></div>
-    <div class="page"><img src="images/page3.jpg" alt="Page 3"></div>
-    <div class="page"><img src="images/page4.jpg" alt="Page 4"></div>
-    <div class="page"><img src="images/page5.jpg" alt="Page 5"></div>
-    <div class="page"><img src="images/page6.jpg" alt="Page 6"></div>
-    <div class="page"><img src="images/page7.jpg" alt="Page 7"></div>
-    <div class="page"><img src="images/page8.jpg" alt="Page 8"></div>
-    <div class="page"><img src="images/page9.jpg" alt="Page 9"></div>
-    <div class="page"><img src="images/page10.jpg" alt="Page 10"></div>
-    <div class="page"><img src="images/page11.jpg" alt="Page 11"></div>
-    <div class="page"><img src="images/page12.jpg" alt="Page 12"></div>
-    <div class="page"><img src="images/page13.jpg" alt="Page 13"></div>
-    <div class="page"><img src="images/page14.jpg" alt="Page 14"></div>
-    <div class="page"><img src="images/page15.jpg" alt="Page 15"></div>
-    <div class="page"><img src="images/page16.jpg" alt="Page 16"></div>
-    <div class="page"><img src="images/page17.jpg" alt="Page 17"></div>
-    <div class="page"><img src="images/page18.jpg" alt="Page 18"></div>
-    <div class="page"><img src="images/page19.jpg" alt="Page 19"></div>
-    <div class="page"><img src="images/page20.jpg" alt="Page 20"></div>
-    <div class="page"><img src="images/page21.jpg" alt="Page 21"></div>
-    <div class="page"><img src="images/page22.jpg" alt="Page 22"></div>
-    <div class="page"><img src="images/page23.jpg" alt="Page 23"></div>
-    <div class="page"><img src="images/page24.jpg" alt="Page 24"></div>
-    <div class="page"><img src="images/page25.jpg" alt="Page 25"></div>
-    <div class="page"><img src="images/page26.jpg" alt="Page 26"></div>
-    <div class="page"><img src="images/page27.jpg" alt="Page 27"></div>
-    <div class="page"><img src="images/page28.jpg" alt="Page 28"></div>
-    <div class="page"><img src="images/page29.jpg" alt="Page 29"></div>
-    <div class="page"><img src="images/page30.jpg" alt="Page 30"></div>
-    <div class="page"><img src="images/page31.jpg" alt="Page 31"></div>
-    <div class="page"><img src="images/page32.jpg" alt="Page 32"></div>
-    <div class="page"><img src="images/page33.jpg" alt="Page 33"></div>
-    <div class="page"><img src="images/page34.jpg" alt="Page 34"></div>
-    <div class="page"><img src="images/page35.jpg" alt="Page 35"></div>
-    <div class="page"><img src="images/page36.jpg" alt="Page 36"></div>
-    <div class="page"><img src="images/page37.jpg" alt="Page 37"></div>
-    <div class="page"><img src="images/page38.jpg" alt="Page 38"></div>
-    <div class="page"><img src="images/page39.jpg" alt="Page 39"></div>
-    <div class="page"><img src="images/page40.jpg" alt="Page 40"></div>
-    <div class="page"><img src="images/page41.jpg" alt="Page 41"></div>
-    <div class="page"><img src="images/page42.jpg" alt="Page 42"></div>
+    <div class="page"><img src="page1.jpg" alt="Page 1"></div>
+    <div class="page"><img src="page2.jpg" alt="Page 2"></div>
+    <div class="page"><img src="page3.jpg" alt="Page 3"></div>
+    <div class="page"><img src="page4.jpg" alt="Page 4"></div>
+    <div class="page"><img src="page5.jpg" alt="Page 5"></div>
+    <div class="page"><img src="page6.jpg" alt="Page 6"></div>
+    <div class="page"><img src="page7.jpg" alt="Page 7"></div>
+    <div class="page"><img src="page8.jpg" alt="Page 8"></div>
+    <div class="page"><img src="page9.jpg" alt="Page 9"></div>
+    <div class="page"><img src="page10.jpg" alt="Page 10"></div>
+    <div class="page"><img src="page11.jpg" alt="Page 11"></div>
+    <div class="page"><img src="page12.jpg" alt="Page 12"></div>
+    <div class="page"><img src="page13.jpg" alt="Page 13"></div>
+    <div class="page"><img src="page14.jpg" alt="Page 14"></div>
+    <div class="page"><img src="page15.jpg" alt="Page 15"></div>
+    <div class="page"><img src="page16.jpg" alt="Page 16"></div>
+    <div class="page"><img src="page17.jpg" alt="Page 17"></div>
+    <div class="page"><img src="page18.jpg" alt="Page 18"></div>
+    <div class="page"><img src="page19.jpg" alt="Page 19"></div>
+    <div class="page"><img src="page20.jpg" alt="Page 20"></div>
+    <div class="page"><img src="page21.jpg" alt="Page 21"></div>
+    <div class="page"><img src="page22.jpg" alt="Page 22"></div>
+    <div class="page"><img src="page23.jpg" alt="Page 23"></div>
+    <div class="page"><img src="page24.jpg" alt="Page 24"></div>
+    <div class="page"><img src="page25.jpg" alt="Page 25"></div>
+    <div class="page"><img src="page26.jpg" alt="Page 26"></div>
+    <div class="page"><img src="page27.jpg" alt="Page 27"></div>
+    <div class="page"><img src="page28.jpg" alt="Page 28"></div>
+    <div class="page"><img src="page29.jpg" alt="Page 29"></div>
+    <div class="page"><img src="page30.jpg" alt="Page 30"></div>
+    <div class="page"><img src="page31.jpg" alt="Page 31"></div>
+    <div class="page"><img src="page32.jpg" alt="Page 32"></div>
+    <div class="page"><img src="page33.jpg" alt="Page 33"></div>
+    <div class="page"><img src="page34.jpg" alt="Page 34"></div>
+    <div class="page"><img src="page35.jpg" alt="Page 35"></div>
+    <div class="page"><img src="page36.jpg" alt="Page 36"></div>
+    <div class="page"><img src="page37.jpg" alt="Page 37"></div>
+    <div class="page"><img src="page38.jpg" alt="Page 38"></div>
+    <div class="page"><img src="page39.jpg" alt="Page 39"></div>
+    <div class="page"><img src="page40.jpg" alt="Page 40"></div>
+    <div class="page"><img src="page41.jpg" alt="Page 41"></div>
+    <div class="page"><img src="page42.jpg" alt="Page 42"></div>
   </div>
 
+  <!-- Navigation buttons -->
+  <div id="prevBtn" class="nav-btn">&#8592;</div>
+  <div id="nextBtn" class="nav-btn">&#8594;</div>
+
+  <!-- Page flip sound -->
+  <audio id="flipSound" src="https://www.soundjay.com/books/page-flip-01a.mp3" preload="auto"></audio>
+
   <script>
-    $(document).ready(function() {
+    function resizeFlipbook() {
+      const w = window.innerWidth * 0.9;
+      const h = window.innerHeight * 0.9;
+      $("#flipbook").turn("size", w, h);
+    }
+
+    $(function() {
       $("#flipbook").turn({
-        width: "90%",
-        height: "90%",
-        autoCenter: true,
-        gradients: true,
-        acceleration: true
+        width: window.innerWidth * 0.9,
+        height: window.innerHeight * 0.9,
+        autoCenter: true
       });
+
+      // Resize on window change
+      $(window).resize(resizeFlipbook);
+
+      // Play flip sound on page turn
+      $("#flipbook").bind("turning", function() {
+        document.getElementById("flipSound").play();
+      });
+
+      // Navigation buttons
+      $("#prevBtn").click(() => $("#flipbook").turn("previous"));
+      $("#nextBtn").click(() => $("#flipbook").turn("next"));
 
       // Keyboard navigation
       $(document).keydown(function(e){
-        if (e.keyCode==37) $("#flipbook").turn("previous");
-        if (e.keyCode==39) $("#flipbook").turn("next");
+        if (e.keyCode==37) $("#flipbook").turn("previous"); // Left arrow
+        if (e.keyCode==39) $("#flipbook").turn("next");     // Right arrow
       });
     });
   </script>
