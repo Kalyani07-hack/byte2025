@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>E-Magazine</title>
+  <title>E-Magazine 2024</title>
 
   <!-- jQuery + turn.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -13,26 +13,27 @@
     body {
       margin: 0;
       padding: 0;
-      background: black;
+      background: black; /* outer background */
+      overflow: hidden;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      overflow: hidden;
       font-family: Arial, sans-serif;
     }
 
     #flipbook {
       width: 90vw;
       height: 90vh;
-      border: 5px solid black;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+      border: 5px solid black; /* page border */
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+      background: black; /* page background */
     }
 
     #flipbook .page {
       width: 100%;
       height: 100%;
-      background: white;
+      background: black; /* page background */
     }
 
     #flipbook .page img {
@@ -56,6 +57,7 @@
       padding: 10px 15px;
       border-radius: 50%;
       user-select: none;
+      z-index: 10;
     }
 
     .nav-btn:hover {
@@ -70,88 +72,89 @@
 
   <!-- Flipbook -->
   <div id="flipbook">
-  <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-0.jpg" alt="Page 1"></div>
-  <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-1.jpg" alt="Page 2"></div>
-  <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-2.jpg" alt="Page 3"></div>
-  <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-3.jpg" alt="Page 4"></div>
-  <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-4.jpg" alt="Page 5"></div>
-  <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-5.jpg" alt="Page 6"></div>
-  <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-6.jpg" alt="Page 7"></div>
-  <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-7.jpg" alt="Page 8"></div>
-  <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-8.jpg" alt="Page 9"></div>
-  <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-9.jpg" alt="Page 10"></div>
-  <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-10.jpg" alt="Page 11"></div>
-  <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-11.jpg" alt="Page 12"></div>
-  <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-12.jpg" alt="Page 13"></div>
-  <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-13.jpg" alt="Page 14"></div>
-  <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-14.jpg" alt="Page 15"></div>
-  <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-15.jpg" alt="Page 16"></div>
-  <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-16.jpg" alt="Page 17"></div>
-  <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-17.jpg" alt="Page 18"></div>
-  <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-18.jpg" alt="Page 19"></div>
-  <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-19.jpg" alt="Page 20"></div>
-  <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-20.jpg" alt="Page 21"></div>
-  <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-21.jpg" alt="Page 22"></div>
-  <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-22.jpg" alt="Page 23"></div>
-  <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-23.jpg" alt="Page 24"></div>
-  <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-24.jpg" alt="Page 25"></div>
-  <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-25.jpg" alt="Page 26"></div>
-  <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-26.jpg" alt="Page 27"></div>
-  <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-27.jpg" alt="Page 28"></div>
-  <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-28.jpg" alt="Page 29"></div>
-  <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-29.jpg" alt="Page 30"></div>
-  <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-30.jpg" alt="Page 31"></div>
-  <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-31.jpg" alt="Page 32"></div>
-  <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-32.jpg" alt="Page 33"></div>
-  <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-33.jpg" alt="Page 34"></div>
-  <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-34.jpg" alt="Page 35"></div>
-  <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-35.jpg" alt="Page 36"></div>
-  <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-36.jpg" alt="Page 37"></div>
-  <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-37.jpg" alt="Page 38"></div>
-  <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-38.jpg" alt="Page 39"></div>
-  <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-39.jpg" alt="Page 40"></div>
-  <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-40.jpg" alt="Page 41"></div>
-  <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-41.jpg" alt="Page 42"></div>
-</div>
-
+    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-0.jpg" alt="Page 1"></div>
+    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-1.jpg" alt="Page 2"></div>
+    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-2.jpg" alt="Page 3"></div>
+    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-3.jpg" alt="Page 4"></div>
+    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-4.jpg" alt="Page 5"></div>
+    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-5.jpg" alt="Page 6"></div>
+    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-6.jpg" alt="Page 7"></div>
+    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-7.jpg" alt="Page 8"></div>
+    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-8.jpg" alt="Page 9"></div>
+    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-9.jpg" alt="Page 10"></div>
+    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-10.jpg" alt="Page 11"></div>
+    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-11.jpg" alt="Page 12"></div>
+    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-12.jpg" alt="Page 13"></div>
+    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-13.jpg" alt="Page 14"></div>
+    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-14.jpg" alt="Page 15"></div>
+    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-15.jpg" alt="Page 16"></div>
+    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-16.jpg" alt="Page 17"></div>
+    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-17.jpg" alt="Page 18"></div>
+    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-18.jpg" alt="Page 19"></div>
+    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-19.jpg" alt="Page 20"></div>
+    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-20.jpg" alt="Page 21"></div>
+    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-21.jpg" alt="Page 22"></div>
+    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-22.jpg" alt="Page 23"></div>
+    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-23.jpg" alt="Page 24"></div>
+    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-24.jpg" alt="Page 25"></div>
+    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-25.jpg" alt="Page 26"></div>
+    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-26.jpg" alt="Page 27"></div>
+    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-27.jpg" alt="Page 28"></div>
+    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-28.jpg" alt="Page 29"></div>
+    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-29.jpg" alt="Page 30"></div>
+    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-30.jpg" alt="Page 31"></div>
+    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-31.jpg" alt="Page 32"></div>
+    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-32.jpg" alt="Page 33"></div>
+    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-33.jpg" alt="Page 34"></div>
+    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-34.jpg" alt="Page 35"></div>
+    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-35.jpg" alt="Page 36"></div>
+    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-36.jpg" alt="Page 37"></div>
+    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-37.jpg" alt="Page 38"></div>
+    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-38.jpg" alt="Page 39"></div>
+    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-39.jpg" alt="Page 40"></div>
+    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-40.jpg" alt="Page 41"></div>
+    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-41.jpg" alt="Page 42"></div>
+  </div>
 
   <!-- Navigation buttons -->
   <div id="prevBtn" class="nav-btn">&#8592;</div>
   <div id="nextBtn" class="nav-btn">&#8594;</div>
 
-  <!-- Page flip sound -->
-  <audio id="flipSound" src="https://www.soundjay.com/books/page-flip-01a.mp3" preload="auto"></audio>
-
   <script>
-    function resizeFlipbook() {
-      const w = window.innerWidth * 0.9;
-      const h = window.innerHeight * 0.9;
-      $("#flipbook").turn("size", w, h);
-    }
-
     $(function() {
       $("#flipbook").turn({
         width: window.innerWidth * 0.9,
         height: window.innerHeight * 0.9,
-        autoCenter: true
+        autoCenter: true,
+        acceleration: true,
+        display: 'double', // shows double pages when possible
+        when: {
+          turned: function(e, page) {
+            // center single first/last page
+            if (page === 1 || page === $("#flipbook .page").length) {
+              $(this).turn('display', 'single');
+            } else {
+              $(this).turn('display', 'double');
+            }
+          }
+        }
       });
 
-      // Resize on window change
-      $(window).resize(resizeFlipbook);
-
-      // Play flip sound on page turn
-      $("#flipbook").bind("turning", function() {
-        document.getElementById("flipSound").play();
+      // Resize flipbook on window resize
+      $(window).resize(function(){
+        const w = window.innerWidth * 0.9;
+        const h = window.innerHeight * 0.9;
+        $("#flipbook").turn("size", w, h);
       });
 
       // Navigation buttons
       $("#prevBtn").click(() => $("#flipbook").turn("previous"));
       $("#nextBtn").click(() => $("#flipbook").turn("next"));
 
-      // Keyboard navigation
+      // Keyboard arrows
       $(document).keydown(function(e){
-        if (e.keyCode==37) $("#flipbook").turn("previous"); // Left arrow
-        if (e.keyCode==39) $("#flipbook").turn("next");     // Right arrow
+        if(e.keyCode==37) $("#flipbook").turn("previous");
+        if(e.keyCode==39) $("#flipbook").turn("next");
       });
     });
   </script>
