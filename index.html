@@ -9,6 +9,7 @@
       margin: 0;
       padding: 0;
       background: black;
+      overflow: hidden; /* stop outside scrolling */
       display: flex;
       justify-content: center;
       align-items: center;
@@ -19,8 +20,7 @@
       height: 90%;
     }
     #flipbook .page {
-      width: 100%;
-      height: 100%;
+      background: white;
     }
     #flipbook img {
       width: 100%;
@@ -82,7 +82,10 @@
     $("#flipbook").turn({
       width: 1000,
       height: 700,
-      autoCenter: true
+      autoCenter: true,
+      elevation: 50,
+      gradients: true,
+      display: 'double'
     });
   </script>
 </body>
