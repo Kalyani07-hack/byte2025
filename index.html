@@ -9,91 +9,127 @@
       margin: 0;
       padding: 0;
       background: black;
-      overflow: hidden; /* stop outside scrolling */
+      overflow: hidden;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
     }
+
     #flipbook {
       width: 90%;
       height: 90%;
     }
+
     #flipbook .page {
-      background: black; /* page background black */
+      background: black;
     }
+
     #flipbook img {
       width: 100%;
       height: 100%;
       object-fit: contain;
-      pointer-events: none; /* allow flipping clicks */
+      pointer-events: none;
+    }
+
+    /* Navigation arrows */
+    .nav-arrow {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 3rem;
+      color: white;
+      background: rgba(0,0,0,0.5);
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+      z-index: 999;
+      transition: background 0.3s;
+    }
+
+    .nav-arrow:hover {
+      background: rgba(255,255,255,0.3);
+    }
+
+    #prev { left: 20px; }
+    #next { right: 20px; }
+
+    /* Page number display */
+    #page-num {
+      position: fixed;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-family: Arial, sans-serif;
+      font-size: 1.2rem;
+      background: rgba(0,0,0,0.6);
+      padding: 6px 14px;
+      border-radius: 20px;
+      z-index: 1000;
     }
   </style>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/3/turn.min.js"></script>
 </head>
 <body>
+
+  <!-- Flipbook -->
   <div id="flipbook">
-    <!-- 42 Pages -->
-    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-0.jpg"></div>
-    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-1.jpg"></div>
-    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-2.jpg"></div>
-    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-3.jpg"></div>
-    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-4.jpg"></div>
-    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-5.jpg"></div>
-    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-6.jpg"></div>
-    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-7.jpg"></div>
-    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-8.jpg"></div>
-    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-9.jpg"></div>
-    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-10.jpg"></div>
-    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-11.jpg"></div>
-    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-12.jpg"></div>
-    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-13.jpg"></div>
-    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-14.jpg"></div>
-    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-15.jpg"></div>
-    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-16.jpg"></div>
-    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-17.jpg"></div>
-    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-18.jpg"></div>
-    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-19.jpg"></div>
-    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-20.jpg"></div>
-    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-21.jpg"></div>
-    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-22.jpg"></div>
-    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-23.jpg"></div>
-    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-24.jpg"></div>
-    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-25.jpg"></div>
-    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-26.jpg"></div>
-    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-27.jpg"></div>
-    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-28.jpg"></div>
-    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-29.jpg"></div>
-    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-30.jpg"></div>
-    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-31.jpg"></div>
-    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-32.jpg"></div>
-    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-33.jpg"></div>
-    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-34.jpg"></div>
-    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-35.jpg"></div>
-    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-36.jpg"></div>
-    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-37.jpg"></div>
-    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-38.jpg"></div>
-    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-39.jpg"></div>
-    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-40.jpg"></div>
-    <div class="page"><img src="Copy of Copy of E-Mgazine 2024-images-41.jpg"></div>
+    <!-- Pages (replace with your images) -->
+    <div class="page"><img src="images/page1.jpg"></div>
+    <div class="page"><img src="images/page2.jpg"></div>
+    <div class="page"><img src="images/page3.jpg"></div>
+    <div class="page"><img src="images/page4.jpg"></div>
+    <!-- continue up to -->
+    <div class="page"><img src="images/page42.jpg"></div>
   </div>
 
+  <!-- Navigation Arrows -->
+  <div id="prev" class="nav-arrow">&#10094;</div>
+  <div id="next" class="nav-arrow">&#10095;</div>
+
+  <!-- Page Number -->
+  <div id="page-num">Page 1 of 42</div>
+
   <script>
+    const totalPages = 42;
+
+    // Initialize Flipbook
     $("#flipbook").turn({
       width: 1000,
-      height: 600,
+      height: 700,
       autoCenter: true,
-      elevation: 50,
+      display: 'double',
       gradients: true,
-      display: 'double'
+      elevation: 50,
+      when: {
+        turned: function(event, page) {
+          updatePageNum(page);
+        }
+      }
     });
 
-    // Keyboard navigation
+    // Arrow key navigation
     $(document).keydown(function(e) {
       if (e.key === "ArrowRight") $("#flipbook").turn("next");
       if (e.key === "ArrowLeft") $("#flipbook").turn("previous");
     });
+
+    // On-screen button navigation
+    $("#next").click(function() { $("#flipbook").turn("next"); });
+    $("#prev").click(function() { $("#flipbook").turn("previous"); });
+
+    // Update page number
+    function updatePageNum(page) {
+      $("#page-num").text("Page " + page + " of " + totalPages);
+    }
   </script>
 </body>
 </html>
